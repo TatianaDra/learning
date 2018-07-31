@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Edit of profile</title>
+    <link rel="stylesheet" href="style2.css">
+  </head>
+  <body>
+    <h1>Profile</h1>
+
+    <form action="https://echo.htmlacademy.ru" method="post" enctype= "multipart/form-data">
+      Sex: <input type="radio" value="male" name="sex"> Male <input type="radio" value="female" name="sex" checked> Female
+      <br>Month And Year Of Your Birth:
+      <br>
+      <select name="month"><option value="jan">January</option></select> <select name="year"><option>1990</option></select>
+      <br>Known Technologies:
+      <br>
+      <select multiple size="4"><option>HTML</option>
+      <option selected>CSS</option>
+      <option>JavaScript</option>
+      <option>Node.js</option></select>
+      <br>Photo: <form enctype= "multipart/form-data"><input type ="file" name="Choose" value="Choose"> 
+      <br><input type="submit" value= "Save">
+    </form>
+  </body>
+</html>
