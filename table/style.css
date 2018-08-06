@@ -30,28 +30,28 @@ td {
    
     }
 
-.column {
+.left_menu_column {
   background-color: darkcyan;
 
 }
 
-.column1 {
+.right_menu_column {
   background-color: darkcyan;
   text-align: right; 
 }
-.column2 {
+.center_menu_column {
   background-color: lightblue;
   text-align: center;
 }
 
-.row{
+.every_second_row{
  background-color: lightyellow;
  
 }
 
-.position_center {
+.text_position_in_center_column {
  text-align: center 
 }
-.position_right {
+.text_position_in_right_column {
   text-align: right; 
 }
