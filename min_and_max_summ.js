@@ -24,24 +24,33 @@ function readLine() {
 
 // Complete the miniMaxSum function below.
 function miniMaxSum(arr) {
-    var sum=0;
-    var SummExpectFirst=0;
-var SummExpectSecond=0;
-var SummExpectThird=0;
-var SummExpectFourth=0;
-var SummExpectFifth=0;
-var min=0;
-var max=0;
-    for (var i=0; i<=arr.length; i++)
-    {sum += arr[i]}
-    SummExpectFirst=sum-arr[1];
-    SummExpectSecond=sum-arr[2];
-    SummExpectThird=sum-arr[3];
-    SummExpectFourth=sum-arr[4];
-    SummExpectFifth=sum-arr[5];
-    if (SummExpectFirst>=SummExpectSecond)
+    
+var sum=Number.POSITIVE_INFINITY;
+var SummExpectFirst=Number.POSITIVE_INFINITY;
+var SummExpectSecond=Number.POSITIVE_INFINITY;
+var SummExpectThird=Number.POSITIVE_INFINITY;
+var SummExpectFourth=Number.POSITIVE_INFINITY;
+var SummExpectFifth=Number.POSITIVE_INFINITY;
+var min=Number.POSITIVE_INFINITY;
+var max=Number.POSITIVE_INFINITY;
+    sum=0;
+    SummExpectFirst=0;
+    SummExpectSecond=0;
+    SummExpectThird=0;
+    SummExpectFourth=0;
+    SummExpectFifth=0;
+    min=0;
+    max=0;
+for (var i=0; i<arr.length; i++)
+   {    sum +=arr[i];}
+        SummExpectFirst=sum-arr[0];
+        SummExpectSecond=sum-arr[1];
+        SummExpectThird=sum-arr[2];
+        SummExpectFourth=sum-arr[3];
+        SummExpectFifth=sum-arr[4];
+if (SummExpectFirst>=SummExpectSecond)
         {min=SummExpectSecond; max=SummExpectFirst;}
-    else
+else
     {min=SummExpectFirst;max=SummExpectSecond;}
     
 if (SummExpectThird<=min)
@@ -59,14 +68,9 @@ if (SummExpectFifth<=min)
 else if (SummExpectFifth>=max)
          {max=SummExpectFifth;}
 
-console.log(min);
-console.log(max);
-   
 
-        
-//return Number(min) + Number(max);
-
-
+    
+console.log(min, max)    
 }
 
 function main() {
