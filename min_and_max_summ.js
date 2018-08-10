@@ -1,3 +1,5 @@
+//task: https://www.hackerrank.com/challenges/mini-max-sum/problem
+
 'use strict';
 
 process.stdin.resume();
@@ -25,49 +27,26 @@ function readLine() {
 // Complete the miniMaxSum function below.
 function miniMaxSum(arr) {
     
-var sum=Number.POSITIVE_INFINITY;
-var SummExpectFirst=Number.POSITIVE_INFINITY;
-var SummExpectSecond=Number.POSITIVE_INFINITY;
-var SummExpectThird=Number.POSITIVE_INFINITY;
-var SummExpectFourth=Number.POSITIVE_INFINITY;
-var SummExpectFifth=Number.POSITIVE_INFINITY;
 var min=Number.POSITIVE_INFINITY;
 var max=Number.POSITIVE_INFINITY;
-    sum=0;
-    SummExpectFirst=0;
-    SummExpectSecond=0;
-    SummExpectThird=0;
-    SummExpectFourth=0;
-    SummExpectFifth=0;
+
     min=0;
     max=0;
-for (var i=0; i<arr.length; i++)
-   {    sum +=arr[i];}
-        SummExpectFirst=sum-arr[0];
-        SummExpectSecond=sum-arr[1];
-        SummExpectThird=sum-arr[2];
-        SummExpectFourth=sum-arr[3];
-        SummExpectFifth=sum-arr[4];
-if (SummExpectFirst>=SummExpectSecond)
-        {min=SummExpectSecond; max=SummExpectFirst;}
-else
-    {min=SummExpectFirst;max=SummExpectSecond;}
+if (arr[3]<arr[4] && arr[0]<arr[1])
+    {min=arr[0]+arr[1]+arr[2]+arr[3]; max=arr[4]+arr[1]+arr[2]+arr[3];
+     }
+else if (arr[3]>=arr[4] && arr[0]>=arr[1])
+{max=arr[0]+arr[2]+arr[3]+arr[4];
+min=arr[0]+arr[1]+arr[2]+arr[4];}
     
-if (SummExpectThird<=min)
-    {min=SummExpectThird;}
-else if (SummExpectThird>=max)
-         {max=SummExpectThird;}
+else if (arr[3]>=arr[4] && arr[0]<arr[1])
+    {max=arr[4]+arr[1]+arr[2]+arr[3];
+    min=arr[0]+arr[1]+arr[2]+arr[4]}
+else if (arr[3]<arr[4] && arr[0]>=arr[1])
+    {min=arr[0]+arr[1]+arr[2]+arr[3];
+   max=arr[0]+arr[2]+arr[4]+arr[3]}
     
-if (SummExpectFourth<=min)
-    {min=SummExpectFourth;}
-else if (SummExpectFourth>=max)
-         {max=SummExpectFourth;}
     
-if (SummExpectFifth<=min)
-    {min=SummExpectFifth;}
-else if (SummExpectFifth>=max)
-         {max=SummExpectFifth;}
-
 
     
 console.log(min, max)    
