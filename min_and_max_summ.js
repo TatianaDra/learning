@@ -29,25 +29,40 @@ function miniMaxSum(arr) {
     
 var min=Number.POSITIVE_INFINITY;
 var max=Number.POSITIVE_INFINITY;
-
-    min=0;
-    max=0;
-if (arr[3]<arr[4] && arr[0]<arr[1])
-    {min=arr[0]+arr[1]+arr[2]+arr[3]; max=arr[4]+arr[1]+arr[2]+arr[3];
-     }
-else if (arr[3]>=arr[4] && arr[0]>=arr[1])
-{max=arr[0]+arr[2]+arr[3]+arr[4];
-min=arr[0]+arr[1]+arr[2]+arr[4];}
-    
-else if (arr[3]>=arr[4] && arr[0]<arr[1])
-    {max=arr[4]+arr[1]+arr[2]+arr[3];
-    min=arr[0]+arr[1]+arr[2]+arr[4]}
-else if (arr[3]<arr[4] && arr[0]>=arr[1])
-    {min=arr[0]+arr[1]+arr[2]+arr[3];
-   max=arr[0]+arr[2]+arr[4]+arr[3]}
+var mini=Number.POSITIVE_INFINITY;
+var maxi=Number.POSITIVE_INFINITY;
+    min=arr[0];
+    max=arr[0];
+    mini=0;
+    maxi=0;
     
     
-
+    for (var i=0; i<arr.length; i++)
+    if (min>=arr[i])
+   { min=arr[i];
+   mini=arr[i]
+   }
+      else if (max<arr[i])
+      {maxi=i;
+    max=arr[i]}
+  
+     for (i=0 ; i<arr.length; i++)
+     if (i!=mini && i!=maxi)
+    min+=arr[i]
+    else min=min;
+        
+    
+     //max+=max[i]}
+     //else 
+     //{min=min;
+     //max=max}
+      
+    
+     
+    
+    
+    
+    
     
 console.log(min, max)    
 }
