@@ -1,5 +1,4 @@
-//task: https://www.hackerrank.com/challenges/mini-max-sum/problem
-
+// task: https://www.hackerrank.com/challenges/mini-max-sum/problem
 'use strict';
 
 process.stdin.resume();
@@ -27,43 +26,33 @@ function readLine() {
 // Complete the miniMaxSum function below.
 function miniMaxSum(arr) {
     
-var min=Number.POSITIVE_INFINITY;
-var max=Number.POSITIVE_INFINITY;
-var mini=Number.POSITIVE_INFINITY;
-var maxi=Number.POSITIVE_INFINITY;
-    min=arr[0];
-    max=arr[0];
-    mini=0;
-    maxi=0;
-    
-    
+var    min=arr[0];
+var    max=arr[0];
+var    mini=0;
+var    maxi=0;
+
+
     for (var i=0; i<arr.length; i++)
     if (min>=arr[i])
    { min=arr[i];
-   mini=arr[i]
+   mini=i
+
    }
-      else if (max<arr[i])
+      else 
       {maxi=i;
     max=arr[i]}
-  
+
      for (i=0 ; i<arr.length; i++)
-     if (i!=mini && i!=maxi)
-    min+=arr[i]
-    else min=min;
-        
-    
-     //max+=max[i]}
-     //else 
-     //{min=min;
-     //max=max}
-      
-    
-     
-    
-    
-    
-    
-    
+     {if (i!=mini && i!=maxi)
+     {
+         min+=arr[i];
+         max+=arr[i]
+
+
+}
+
+     }
+
 console.log(min, max)    
 }
 
