@@ -29,14 +29,16 @@ function readLine() {
 // Complete the birthdayCakeCandles function below.
 function birthdayCakeCandles(ar) {
     var max=Number.POSITIVE_INFINITY;
-    //var n = Number.POSITIVE_INFINITY;
     max=ar[0];
     var n=0;
  for (var i=0; i<ar.length; i++)
   if(max<=ar[i])
   {max=ar[i];
-  n=n+1;}
-console.log (n)  }
+  }
+for (var k=0; k<ar.length; k++)
+    if (ar[k]==max)
+        {n++}
+return (n)  }
 
 function main() {
     const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
