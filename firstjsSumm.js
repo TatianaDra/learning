@@ -11,7 +11,7 @@ process.stdin.on('data', function (data) {
 
 process.stdin.on('end', function () {
     input_stdin_array = input_stdin.split("\n");
-    main();    
+    main();
 });
 
 function readLine() {
@@ -20,14 +20,15 @@ function readLine() {
 
 function solveMeFirst(a, b) {
 
-  return a+b;
-   
+    return a + b;
+
 }
 
 
 function main() {
     var a = parseInt(readLine());
-    var b = parseInt(readLine());;
+    var b = parseInt(readLine());
+    ;
 
     var res = solveMeFirst(a, b);
     console.log(res);

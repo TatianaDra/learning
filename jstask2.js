@@ -1,5 +1,7 @@
-//Given an array of integers, calculate the fractions of its elements that are positive, negative, and are zeros. 
+//Given an arrayOfNumbersay of integers, calculate the fractions of its elements that are positive, negative, and are zeros. 
 //Print the decimal value of each fraction on a new line.
+//https://www.hackerranegativeNumber.com/challenges/plus-minus/problem
+//todo: function for printing of result
 'use strict';
 
 process.stdin.resume();
@@ -8,52 +10,57 @@ process.stdin.setEncoding('utf-8');
 let inputString = '';
 let currentLine = 0;
 
-process.stdin.on('data', inputStdin => {
+process.stdin.on('data', inputStdin = > {
     inputString += inputStdin;
-});
+})
+;
 
-process.stdin.on('end', _ => {
+process.stdin.on('end', _ = > {
     inputString = inputString.replace(/\s*$/, '')
         .split('\n')
-        .map(str => str.replace(/\s*$/, ''));
+        .map(str = > str.replace(/\s*$/, '')
+)
+;
 
-    main();
-});
+main();
+})
+;
 
 function readLine() {
     return inputString[currentLine++];
 }
 
 
-function plusMinus(arr) {
-    var pk = 0;
-    var zk = 0;
-    var nk = 0;
-for(var i = 0; i <= arr.length; i++){
-    if (arr[i]>0)
-        {pk++;
+function plusMinus(arrayOfNumbers) {
+    var PositiveNumber = 0;
+    var zeroNumber = 0;
+    var negativeNumber = 0;
+    for (var i = 0; i <= arrayOfNumbers.length; i++) {
+        if (arrayOfNumbers[i] > 0) {
+            PositiveNumber++;
         }
-    else if (arr[i]<0)
-        {nk++;
+        else if (arrayOfNumbers[i] < 0) {
+            negativeNumber++;
         }
-    else if (arr[i]==0) {zk++;
-         }
+        else if (arrayOfNumbers[i] == 0) {
+            zeroNumber++;
+        }
     }
-    pk = pk/arr.length;
-    nk = nk/arr.length;
-    zk = zk/arr.length;
-    console.log(pk);
-    console.log(nk);
-    console.log(zk);
-    }
-
-
+    PositiveNumber = PositiveNumber / arrayOfNumbers.length;
+    negativeNumber = negativeNumber / arrayOfNumbers.length;
+    zeroNumber = zeroNumber / arrayOfNumbers.length;
+    console.log(PositiveNumber);
+    console.log(negativeNumber);
+    console.log(zeroNumber);
+}
 
 
 function main() {
     const n = parseInt(readLine(), 10);
 
-    const arr = readLine().split(' ').map(arrTemp => parseInt(arrTemp, 10));
+    const arrayOfNumbers = readLine().split(' ').map(arrayOfNumbersTemp = > parseInt(arrayOfNumbersTemp, 10)
+)
+    ;
 
-    plusMinus(arr);
+    plusMinus(arrayOfNumbers);
 }
