@@ -1,3 +1,5 @@
+//task: https://www.hackerrank.com/challenges/solve-me-first/problem
+
 process.stdin.resume();
 process.stdin.setEncoding('ascii');
 
@@ -24,12 +26,15 @@ function solveMeFirst(a, b) {
 
 }
 
-
-function main() {
+function print() {
     var a = parseInt(readLine());
     var b = parseInt(readLine());
     ;
 
     var res = solveMeFirst(a, b);
     console.log(res);
+}
+
+function main() {
+    print()
 }

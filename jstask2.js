@@ -1,7 +1,7 @@
 //Given an arrayOfNumbersay of integers, calculate the fractions of its elements that are positive, negative, and are zeros. 
 //Print the decimal value of each fraction on a new line.
-//https://www.hackerranegativeNumber.com/challenges/plus-minus/problem
-//todo: function for printing of result
+//https://www.hackerrank.com/challenges/plus-minus/problem
+
 'use strict';
 
 process.stdin.resume();
@@ -10,15 +10,15 @@ process.stdin.setEncoding('utf-8');
 let inputString = '';
 let currentLine = 0;
 
-process.stdin.on('data', inputStdin = > {
+process.stdin.on('data', inputStdin => {
     inputString += inputStdin;
 })
 ;
 
-process.stdin.on('end', _ = > {
+process.stdin.on('end', _ => {
     inputString = inputString.replace(/\s*$/, '')
         .split('\n')
-        .map(str = > str.replace(/\s*$/, '')
+        .map(str => str.replace(/\s*$/, '')
 )
 ;
 
@@ -54,13 +54,17 @@ function plusMinus(arrayOfNumbers) {
     console.log(zeroNumber);
 }
 
-
-function main() {
+function print ()
+{
     const n = parseInt(readLine(), 10);
 
-    const arrayOfNumbers = readLine().split(' ').map(arrayOfNumbersTemp = > parseInt(arrayOfNumbersTemp, 10)
+    const arrayOfNumbers = readLine().split(' ').map(arrayOfNumbersTemp => parseInt(arrayOfNumbersTemp, 10)
 )
     ;
 
     plusMinus(arrayOfNumbers);
+}
+
+function main() {
+    print()
 }

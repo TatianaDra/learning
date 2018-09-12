@@ -1,5 +1,5 @@
 //task: https://www.hackerrank.com/challenges/the-birthday-bar/problem
-//todo: function for printing of result
+
 'use strict';
 
 const fs = require('fs');
@@ -28,8 +28,9 @@ function readLine() {
 function birthday(ArrayOfSquareNumbers, dateOfBirthday, monthOfBirthday) {
     var summOfAdjacentSqrs = 0;
     var countOfCandles = 0;
-
-    for (var i = 0; i < ArrayOfSquareNumbers.length; i++) {
+    var lengthOfMass = 0;
+    lengthOfMass = ArrayOfSquareNumbers.length;
+    for (var i = 0; i < lengthOfMass; i++) {
         var newI = i;
 
         for (var j = 0; j < monthOfBirthday; j++) {
@@ -44,12 +45,12 @@ function birthday(ArrayOfSquareNumbers, dateOfBirthday, monthOfBirthday) {
     return countOfCandles;
 }
 
-function main() {
+function print() {
     const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
 
     const n = parseInt(readLine().trim(), 10);
 
-    const ArrayOfSquareNumbers = readLine().replace(/\s+$/g, '').split(' ').map(sTemp = > parseInt(sTemp, 10)
+    const ArrayOfSquareNumbers = readLine().replace(/\s+$/g, '').split(' ').map(sTemp => parseInt(sTemp, 10)
 )
     ;
 
@@ -59,9 +60,14 @@ function main() {
 
     const monthOfBirthday = parseInt(dm[1], 10);
 
-    const result = birthday(s, d, m);
+    const result = birthday(ArrayOfSquareNumbers, dateOfBirthday, monthOfBirthday);
 
     ws.write(result + '\n');
 
     ws.end();
+}
+
+function main() {
+
+    print()
 }

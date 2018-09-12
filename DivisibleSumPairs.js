@@ -1,8 +1,7 @@
-//task: https://www.hackerrank.com/challenges/divisible-sum-pairs/problem
-//todo: function for printing of result
-'use strict';
+//Given an arrayOfNumbersay of integers, calculate the fractions of its elements that are positive, negative, and are zeros. 
+//Print the decimal value of each fraction on a new line.
 
-const fs = require('fs');
+'use strict';
 
 process.stdin.resume();
 process.stdin.setEncoding('utf-8');
@@ -10,15 +9,15 @@ process.stdin.setEncoding('utf-8');
 let inputString = '';
 let currentLine = 0;
 
-process.stdin.on('data', inputStdin = > {
+process.stdin.on('data', inputStdin => {
     inputString += inputStdin;
 })
 ;
 
-process.stdin.on('end', _ = > {
+process.stdin.on('end', _ => {
     inputString = inputString.replace(/\s*$/, '')
         .split('\n')
-        .map(str = > str.replace(/\s*$/, '')
+        .map(str => str.replace(/\s*$/, '')
 )
 ;
 
@@ -30,34 +29,40 @@ function readLine() {
     return inputString[currentLine++];
 }
 
-// Complete the divisibleSumPairs function below.
-function divisibleSumPairs(length, devider, array) {
-    var divPairsOfNumbers = 0;
-    for (var i = 0; i < array.length; i++)
-        for (var j = i + 1; j < array.length; j++) {
-            if (((array[i] + array[j]) % devider == 0) && (i < j))
-                divPairsOfNumbers++;
 
+function plusMinus(arrayOfNumbers) {
+    var PositiveNumber = 0;
+    var zeroNumber = 0;
+    var negativeNumber = 0;
+    for (var i = 0; i <= arrayOfNumbers.length; i++) {
+        if (arrayOfNumbers[i] > 0) {
+            PositiveNumber++;
         }
-    return divPairsOfNumbers;
+        else if (arrayOfNumbers[i] < 0) {
+            negativeNumber++;
+        }
+        else if (arrayOfNumbers[i] == 0) {
+            zeroNumber++;
+        }
+    }
+    PositiveNumber = PositiveNumber / arrayOfNumbers.length;
+    negativeNumber = negativeNumber / arrayOfNumbers.length;
+    zeroNumber = zeroNumber / arrayOfNumbers.length;
+    console.log(PositiveNumber);
+    console.log(negativeNumber);
+    console.log(zeroNumber);
 }
 
-function main() {
-    const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
+function print() {
+    const n = parseInt(readLine(), 10);
 
-    const nk = readLine().split(' ');
-
-    const length = parseInt(nk[0], 10);
-
-    const devider = parseInt(nk[1], 10);
-
-    const array = readLine().split(' ').map(arTemp = > parseInt(arTemp, 10)
+    const arrayOfNumbers = readLine().split(' ').map(arrayOfNumbersTemp => parseInt(arrayOfNumbersTemp, 10)
 )
     ;
 
-    let result = divisibleSumPairs(length, devider, array);
+    plusMinus(arrayOfNumbers);
+}
 
-    ws.write(result + "\n");
-
-    ws.end();
+function main() {
+    print()
 }
