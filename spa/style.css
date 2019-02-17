@@ -1,0 +1,79 @@
+.styleForDiv
+{
+	
+	
+	min-height:200px;
+	min-width: 30%;
+	position:relative;
+}
+
+	
+	
+
+.styleForDiv2
+{
+	
+	min-height:200px;
+	min-width: 70%;
+	position:relative;
+	
+
+}
+
+.headerDiv
+{
+	min-height:700px;
+	min-width: 30%;
+	position:relative;
+}
+.headerDiv2
+{
+	min-height:700px;
+	min-width: 70%;
+	position:relative;
+}
+
+
+
+.sectionStyle
+{
+	
+	min-width:100%;
+	min-height:100px;
+	display: flex;
+	width: 100%;
+	
+		
+}
+
+
+.darkGrey 
+{
+	background-color:#2b2c2c;
+}
+
+.lightGrey
+{
+	background-color:#282929;
+}
+
+
+.headerPosition
+{
+	min-width:100%;
+	display: flex;
+	width: 100%;
+	
+	
+}
+
+
+.imgSettings
+{
+	margin-left:50px;
+	margin-top:50px;
+	width: 250px;
+	height: 250px;
+	border-radius:250px;
+}
+
